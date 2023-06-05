@@ -1,0 +1,428 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.users__group_list > .users > .user, .users__group_list, .users__card > .users > .user, .users__list > .users > .user > p, .users__list_thead > p {
+  border: 1px solid #dddddd;
+}
+
+.users__group_list > .users::-webkit-scrollbar, .users__group::-webkit-scrollbar {
+  width: 7px;
+  background: #eee;
+}
+.users__group_list > .users::-webkit-scrollbar-thumb, .users__group::-webkit-scrollbar-thumb {
+  width: 7px;
+  background: #ccc;
+  border-radius: 10px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  background: #f7fafd;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+
+[class*=__conteiner] {
+  margin: 0 auto;
+  padding: 20px 20px 0;
+  width: 100%;
+  max-width: 1406px;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  top: 0;
+  background: #d8e7f5;
+  z-index: 5;
+}
+.header__conteiner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-top: 0;
+  height: 60px;
+}
+.header__link {
+  position: relative;
+  margin-right: 30px;
+  font-size: 18px;
+}
+.header__link:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -2px;
+  background: #3f4e5c;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+  transform-origin: left;
+}
+.header__link:hover:before {
+  transform: scaleX(1);
+  transition: transform 0.3s;
+  transform-origin: left;
+}
+
+.footer {
+  height: 60px;
+  background: #d8e7f5;
+}
+.footer__conteiner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 0;
+  height: 60px;
+}
+.footer__icons {
+  height: 25px;
+  object-fit: cover;
+}
+
+.main__home {
+  margin-top: 70px;
+  background: none;
+}
+.main__photo {
+  float: right;
+}
+.main__title {
+  position: absolute;
+  margin: 140px 0 0 150px;
+  font-family: Lobster;
+  font-size: 50px;
+  font-style: italic;
+  line-height: 2;
+  text-indent: -100px;
+}
+.main__text {
+  position: absolute;
+  margin: 500px 0 0 800px;
+}
+
+.main__menu {
+  display: flex;
+  align-items: center;
+  padding: 70px 0 20px;
+}
+.main__view {
+  flex: 1 1 auto;
+}
+.main__view_button {
+  margin: 0 10px;
+}
+.main__select {
+  margin-right: 8px;
+  width: 180px;
+  height: 32px;
+  background: #ffffff;
+  border: 1px #3f4e5c solid;
+  border-radius: 5px;
+  white-space: nowrap;
+}
+.main__select_button {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  width: 180px;
+  height: 32px;
+  cursor: pointer;
+}
+.main__select_buttonIcon {
+  position: absolute;
+  display: inline-block;
+  content: "";
+  margin: -7px 0 0 145px;
+  width: 12px;
+  height: 12px;
+  border-top: 1px #3f4e5c solid;
+  border-left: 1px #3f4e5c solid;
+  transform: rotate(225deg);
+}
+.main__select_buttonIcon._active {
+  margin-top: 5px;
+  transform: rotate(45deg);
+}
+.main__select_items {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  margin: -2px 0 0 1px;
+  width: 175px;
+  background: white;
+  border: 0.5px #3f4e5c solid;
+  visibility: hidden;
+  transform: scaleY(0);
+  transform-origin: 0 0;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+.main__select_items._active {
+  visibility: visible;
+  transform: scaleY(1);
+  transform-origin: 0 10;
+  transition: all 0.3s ease;
+}
+.main__select_item {
+  padding: 5px 8px;
+  text-align: start;
+  cursor: pointer;
+}
+.main__select_item:hover {
+  text-decoration: underline;
+}
+.main__search {
+  position: relative;
+  border: 1px #3f4e5c solid;
+  border-radius: 5px;
+}
+.main__search_input {
+  padding-left: 10px;
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+.main__search_input:focus {
+  width: 250px;
+  transition: all 0.3s ease;
+}
+.main__search_button {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: #3f4e5c;
+  border-radius: 0 3px 3px 0;
+}
+.main__search_button::before {
+  content: "\f002";
+  font-family: FontAwesome;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.users__list {
+  margin: 20px 0;
+  width: 100%;
+}
+.users__list_thead {
+  display: flex;
+  width: 100%;
+}
+.users__list_thead > p {
+  width: 25%;
+  padding: 8px;
+  text-align: center;
+  background-color: #efefef;
+}
+.users__list_thead > p:first-child {
+  width: 30px;
+}
+.users__list > .users > .user {
+  display: flex;
+}
+.users__list > .users > .user > p {
+  padding: 6px;
+  width: 25%;
+}
+.users__list > .users > .user > p:first-child {
+  width: 30px;
+  text-align: center;
+}
+.users__list > .users > .user .user__photo {
+  display: none;
+}
+
+.users__card {
+  width: 100%;
+}
+.users__card > .users {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.users__card > .users > .user {
+  position: relative;
+  margin: 10px;
+  padding: 10px;
+  width: 230px;
+  height: 290px;
+  text-align: center;
+}
+.users__card > .users > .user .user__photo {
+  padding: 2px 0;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.users__card > .users > .user .user__name {
+  padding: 10px 0;
+  font-weight: bold;
+}
+.users__card > .users > .user .user__email {
+  padding-bottom: 10px;
+  font-size: 14px;
+}
+.users__card > .users > .user .user__checkbox {
+  position: absolute;
+  margin-left: 90px;
+}
+
+.users__group {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  overflow-x: auto;
+}
+@media screen and (max-width: 1400px) {
+  .users__group {
+    border: 1px solid #dddddd;
+  }
+}
+.users__group_title {
+  padding: 10px 0;
+  font-weight: bold;
+  text-align: center;
+  background: #d8e7f5;
+}
+.users__group_list {
+  margin: 20px 10px;
+  width: 250px;
+}
+.users__group_list > .users {
+  padding: 10px 0;
+  height: 68vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.users__group_list > .users > .user {
+  position: relative;
+  margin: 10px;
+  padding: 10px;
+  width: 225px;
+  height: 80px;
+}
+.users__group_list > .users > .user .user__photo {
+  display: none;
+}
+.users__group_list > .users > .user .user__name {
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+.users__group_list > .users > .user .user__phone {
+  font-size: 14px;
+}
+.users__group_list > .users > .user .user__email {
+  font-size: 14px;
+}
+.users__group_list > .users > .user .user__position {
+  display: none;
+}
+.users__group_list > .users > .user .user__checkbox {
+  position: absolute;
+  margin-left: 190px;
+}
+
+.user {
+  background-color: #ffffff;
+}
+.user._active {
+  background-color: #d8e7f5;
+}

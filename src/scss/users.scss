@@ -1,0 +1,316 @@
+// Users page style
+
+.main {
+
+    // .main__menu
+
+    &__menu {
+        display: flex;
+        align-items: center;
+        padding: 70px 0 20px;
+    }
+
+    // .main__view
+
+    &__view {
+        flex: 1 1 auto;
+
+        // .main__view_button
+
+        &_button {
+            margin: 0 10px;
+        }
+    }
+
+    // .main__select
+
+    &__select {
+        margin-right: 8px;
+        width: 180px;
+        height: 32px;
+        background: $white;
+        border: 1px $grey solid;
+        border-radius: 5px;
+        white-space: nowrap;
+
+        // .main__select_button
+
+        &_button {
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            width: 180px;
+            height: 32px;
+            cursor: pointer;
+        }
+
+        // .main__select_buttonIcon
+
+        &_buttonIcon {
+            position: absolute;
+            display: inline-block;
+            content: '';
+            margin: -7px 0 0 145px;
+            width: 12px;
+            height: 12px;
+            border-top:  1px $grey solid;
+            border-left: 1px $grey solid;
+            transform: rotate(225deg);
+
+            // .main__select_buttonIcon _active
+
+            &._active {
+              margin-top: 5px;
+              transform: rotate(45deg);
+            }
+        }
+
+        // .main__select_items
+
+        &_items {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            margin: -2px 0 0 1px;
+            width: 175px;
+            background: white;
+            border: 0.5px $grey solid;
+            visibility: hidden;
+            transform: scaleY(0);
+            transform-origin: 0 0;
+            transition: all .3s ease;
+            z-index: 10;
+
+            &._active {
+              visibility: visible;
+              transform: scaleY(1);
+              transform-origin: 0 10;
+              transition: all .3s ease;
+            }
+        }
+
+        // .main__select_item
+
+        &_item {
+            padding: 5px 8px;
+            text-align: start;
+            cursor: pointer;
+            
+            &:hover {     
+              text-decoration: underline;
+            }
+        }
+    }
+
+    // .main__search
+
+    &__search {
+        position: relative;
+        border: 1px $grey solid;
+        border-radius: 5px;
+
+        // .main__search_input
+
+        &_input {
+            padding-left: 10px;
+            width: 150px;
+            height: 30px;
+            border-radius: 5px;
+            outline: none;
+            transition: all .3s ease;
+
+            // .main__search_input:focus
+
+            &:focus {
+                width: 250px;
+                transition: all .3s ease;
+            }
+        }
+
+        // .main__search_button
+
+        &_button {
+            position: absolute; 
+            top: 0;
+            right: 0px;
+            width: 30px;
+            height: 30px;
+            border: none;
+            background: $grey;
+            border-radius: 0 3px 3px 0;
+
+            // .main__search_button::before
+
+            &::before {
+                content: "\f002";
+                font-family: FontAwesome;
+                font-size: 14px;
+                color: $white;
+            }
+        }
+    }
+}
+
+.users__list {
+    margin: 20px 0;
+    width: 100%;
+
+    &_thead {
+        display: flex;
+        width: 100%;
+
+        & > p {
+            width: 25%;
+            padding: 8px;
+            text-align: center;
+            background-color: #efefef;
+            @extend %border;
+
+            &:first-child {
+                width: 30px;
+            }
+        }
+    }
+    
+    & > .users {
+        & > .user {  
+            display: flex;
+
+            & > p {
+                padding: 6px;
+                width: 25%;
+                @extend %border;
+
+                &:first-child {
+                    width: 30px;
+                    text-align: center;
+                }
+            }
+
+            & .user__photo {
+                display: none;
+            }
+        }
+    }   
+}
+
+.users__card {
+    width: 100%;
+
+    & > .users {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 100%;
+
+        & > .user { 
+            position: relative;
+            margin: 10px;
+            padding: 10px;
+            width: 230px;
+            height: 290px;
+            text-align: center;
+            @extend %border;
+
+            & .user__photo {
+                padding: 2px 0;
+                width: 150px;
+                height: 150px;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+
+            & .user__name {
+                padding: 10px 0;
+                font-weight: bold;
+            }
+
+            & .user__email {
+                padding-bottom: 10px;
+                font-size: 14px;
+            }
+
+            & .user__checkbox {
+                position: absolute;
+                margin-left: 90px;
+            }
+        }
+    }
+}
+
+.users__group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    overflow-x: auto;
+    @extend %scroll;
+
+    @media screen and (max-width: 1400px) {
+        border: 1px solid #dddddd;
+    }
+
+    &_title {
+        padding: 10px 0;
+        font-weight: bold;
+        text-align: center;
+        background: $blue;
+    }
+
+    &_list {
+        margin: 20px 10px;
+        width: 250px;
+        @extend %border;
+
+        & > .users {
+            padding: 10px 0;
+            height: 68vh;
+            overflow-x: hidden;
+            overflow-y: auto; 
+
+            @extend %scroll;
+
+            & > .user {  
+                position: relative;
+                margin: 10px;
+                padding: 10px;
+                width: 225px;
+                height: 80px;
+                @extend %border;
+ 
+
+                & .user__photo {
+                    display: none;
+                }
+
+                & .user__name {
+                    padding-bottom: 5px;
+                    font-weight: bold;
+                }
+
+                & .user__phone {
+                    font-size: 14px;
+                }
+
+                & .user__email {
+                    font-size: 14px;
+                }
+
+                & .user__position {
+                    display: none;
+                }
+
+                & .user__checkbox {
+                    position: absolute;
+                    margin-left: 190px;
+                }
+            }
+        } 
+    }
+}
+
+.user {
+    background-color: $white;
+    &._active {
+        background-color: $blue;
+    }
+}

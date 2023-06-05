@@ -1,0 +1,37 @@
+// Home page style
+
+.main {
+
+    // .main__home
+
+    &__home {
+        margin-top: 70px;
+        background: none;
+    }
+
+    // .main__photo
+
+    &__photo {
+        float: right;
+    }
+
+    // .main__title
+
+    &__title {
+        position: absolute;
+        margin: 140px 0 0 150px;
+        font-family: Lobster;
+        font-size: 50px;
+        font-style: italic;
+        line-height: 2;
+        text-indent: -100px; 
+    }
+
+    // .main__text
+
+    &__text {
+        position: absolute;
+        margin: 500px 0 0 800px;
+    }
+}
+
